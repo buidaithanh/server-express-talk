@@ -29,7 +29,10 @@ const server = app.listen(PORT, () => {
 
 const io = socket(server, {
   cors: {
-    origin: "http://127.0.0.1:5173",
+    origin:
+      process.env.NODE_ENV === "production"
+        ? "https://e-xpress-talks.vercel.app/"
+        : ["http://localhost:5173"],
     credentials: true,
   },
 });
