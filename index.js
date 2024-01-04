@@ -29,13 +29,19 @@ const server = app.listen(PORT, () => {
 
 const io = socket(server, {
   cors: {
-    origin:
-      process.env.NODE_ENV === "production"
-        ? "https://e-xpress-talks.vercel.app"
-        : ["http://localhost:5173"],
+    origin: "https://e-xpress-talks.vercel.app/",
     credentials: true,
   },
 });
+// const io = socket(server, {
+//   cors: {
+//     origin:
+//       process.env.NODE_ENV === "production"
+//         ? "https://e-xpress-talks.vercel.app"
+//         : ["http://localhost:5173"],
+//     credentials: true,
+//   },
+// });
 
 global.onlineUser = new Map();
 
