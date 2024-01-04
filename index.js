@@ -29,7 +29,7 @@ const server = app.listen(PORT, () => {
 
 const io = socket(server, {
   cors: {
-    origin: "https://e-xpress-talks.vercel.app/",
+    origin: "https://e-xpress-talks.vercel.app",
     credentials: true,
   },
 });
